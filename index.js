@@ -10,7 +10,7 @@ const Blog = require(`./models/blog`);
 mongoose
   .connect(`mongodb://127.0.0.1:27017/sample_db`)
   .then((result) => {
-    console.log("CONNECTED TO MONGODB MAS APRI GANTENG");
+    console.log("CONNECTED TO MONGODB YA MAS APRI GANTENG");
   })
   .catch((err) => {
     console.log(err + " ERROR CUY ADA YANG SALAH MUNGKIN DI LINK NYA ");
