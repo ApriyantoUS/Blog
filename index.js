@@ -8,12 +8,12 @@ const Blog = require(`./models/blog`);
 
 // Connect to Mongodb
 mongoose
-  .connect(`mongodb://127.0.0.1/blog_db`)
-  .then((res) => {
-    console.log("connect to mongodb");
+  .connect(`mongodb://127.0.0.1:27017/sample_db`)
+  .then((result) => {
+    console.log("CONNECTED TO MONGODB MAS APRI GANTENG");
   })
-  .then((err) => {
-    console.log(err);
+  .catch((err) => {
+    console.log(err + " ERROR CUY ADA YANG SALAH MUNGKIN DI LINK NYA ");
   });
 
 //  Template engine
