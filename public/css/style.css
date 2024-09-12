@@ -1,0 +1,112 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.protest-guerrilla-regular {
+  font-family: "Protest Guerrilla", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+body {
+  background-color: rgb(219, 219, 219);
+}
+
+header {
+  text-align: center;
+}
+
+.hamburger {
+  display: none;
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+}
+
+.container-nav {
+  background-color: rgba(155, 168, 153, 0.295);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.list-nav {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .list-nav {
+    display: none;
+  }
+  /* From Uiverse.io by PhyoTP */
+  .hamburger {
+    display: block;
+    padding: 5px;
+    margin: 10px;
+  }
+
+  .label-check {
+    display: none;
+  }
+
+  .hamburger-label {
+    width: 50px;
+    height: 30px;
+    display: block;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+
+  .hamburger-label div {
+    width: 50px;
+    height: 6px;
+    background-color: #000000;
+    position: absolute;
+  }
+
+  .line1 {
+    transition: all 0.3s;
+  }
+
+  .line2 {
+    margin: 18px 0 0 0;
+    transition: 0.3s;
+  }
+
+  .line3 {
+    margin: 36px 0 0 0;
+    transition: 0.3s;
+  }
+
+  #label-check:checked + .hamburger-label .line1 {
+    transform: rotate(35deg) scaleX(0.55) translate(39px, -4.5px);
+    border-radius: 50px 50px 50px 0;
+  }
+
+  #label-check:checked + .hamburger-label .line3 {
+    transform: rotate(-35deg) scaleX(0.55) translate(39px, 4.5px);
+    border-radius: 0 50px 50px 50px;
+  }
+
+  #label-check:checked + .hamburger-label .line2 {
+    border-top-right-radius: 50px;
+    border-bottom-right-radius: 50px;
+    width: 45px;
+  }
+  #label-check:checked + .hamburger-label {
+    transform: rotate(90deg);
+  }
+}
