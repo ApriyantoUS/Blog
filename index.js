@@ -1,4 +1,5 @@
 const path = require("path");
+const { v4: uuidv4 } = require("uuid");
 const express = require("express");
 const mongoose = require("mongoose");
 const app = express();
@@ -16,7 +17,7 @@ mongoose
 // contoh data sementara
 const post = [
   {
-    id: 1,
+    id: uuidv4(),
     title: "Belajar Node.js",
     image: "assets/images/nodejs.png",
     alt: "nodejs",
@@ -26,7 +27,7 @@ const post = [
     category: "Programming",
   },
   {
-    id: 2,
+    id: uuidv4(),
     title: "Belajar Express.js",
     body: "Konten artikel...",
     author: "Apriyanto",
@@ -36,19 +37,19 @@ const post = [
 
 const comments = [
   {
-    id: 1,
+    id: uuidv4(),
     username: "Apriyanto",
     date: "11 September 2024",
     text: "Sangat bermanafaat oleh Devtech Hidayah",
   },
   {
-    id: 2,
+    id: uuidv4(),
     username: "Woro Widowati",
     date: "13 September 2024",
     text: "Sangat bermanafaat oleh Devtech Hidayah kamu",
   },
   {
-    id: 3,
+    id: uuidv4(),
     username: "Muhammad Rizki",
     date: "13 September 2024",
     text: "Sangat bermanafaat oleh Devtech Hidayah Mantap",
@@ -87,9 +88,26 @@ app
   })
   .post("/blog", (req, res) => {
     const { username, text } = req.body;
-    comments.push({ username, date: new Date().toLocaleDateString(), text });
+    comments.push({
+      username,
+      date: new Date().toLocaleDateString("id-ID", {
+        weekday: "long", // Nama hari (Senin, Selasa, dll.)
+        year: "numeric", // Tahun (2023, dll.)
+        month: "long", // Nama bulan (Januari, Februari, dll.)
+        day: "numeric", // Tanggal (1, 2, 3, dll.)
+      }),
+      text,
+    });
     res.render("blog.ejs", { post, comments });
-  });
+  })
+  .patch("/blog", (req, res) => {})
+  .delete("/blog", (req, res) => {});
+
+app.get("/blog/:id", (req, res) => {
+  const { id } = req.params;
+  const post = post.find((c) => c.id == id);
+  res.render("/blog/show", { post });
+});
 
 app.get("*", (req, res) => {
   res.send(`
