@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+}
+
+.container-article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.article-card {
+  width: 400px;
+}
+
+.image-show {
+  width: 100%;
+}
+
+.container-aside {
+  width: 400px;
+}
+
+.image-aside {
+  width: 100%;
+}

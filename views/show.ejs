@@ -3,10 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/show.css" />
+    <title><%= posted.title %></title>
   </head>
   <body>
-    <h1>post id :<%= post.id %></h1>
-    <h2><%= post.body %></h2>
+    <header style="background-color: rgb(0, 255, 170)">
+      <h1 class="protest-guerrilla-regular">Devtech Hidayah</h1>
+      <h3 style="color: gray">Devtech Hidayah Blog berisi tentang tips dan trik komputer serta berbagai macam tutorial pemrograman.</h3>
+    </header>
+    <nav id="nav">
+      <div class="container-nav">
+        <div class="container hamburger">
+          <input type="checkbox" id="label-check" class="label-check" />
+          <label class="hamburger-label" for="label-check">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+            <label></label
+          ></label>
+        </div>
+        <ul class="list-nav">
+          <li><a href="/home">HOME</a></li>
+          <li><a href="#">ABOUT</a></li>
+          <li><a href="/blog">BLOG</a></li>
+          <li><a href="#">GALLERY</a></li>
+          <li><a href="#">CONTACT</a></li>
+        </ul>
+        <div style="display: flex; align-items: center">
+          <input type="text" placeholder="Search" style="width: 500px; height: 30px; padding: 2px; border: none" />
+          <img src="/assets/images/search.png" alt="search" width="30" style="background-color: rgb(0, 255, 179); padding: 4px" />
+        </div>
+      </div>
+      <!--  From Uiverse.io by PhyoTP  -->
+    </nav>
+    <div class="container-show">
+      <div class="container-article">
+        <div class="article-card">
+          <div class="show">
+            <img src="<%= posted.image %>" alt="<%= posted.alt %>" class="image-show" />
+            <h2><%= posted.subtitle %></h2>
+            <p style="margin-top: 5px;"><%= posted.body %></p>
+          </div>
+        </div>
+        <div class="container-aside">
+        <div class="images">
+          <img src="<%= posted.image  %>" alt="<%= posted.alt %>" class="image-aside" />
+        </div>
+        </div>
+    </div>
+    <div></div>
   </body>
 </html>

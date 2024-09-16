@@ -6,6 +6,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/blog.css" />
     <title>Home</title>
@@ -18,13 +21,6 @@
       </header>
       <nav id="nav">
         <div class="container-nav">
-          <h1 class="protest-guerrilla-regular">Devtech Hidayah</h1>
-          <ul class="list-nav">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#">ABOUT</a></li>
-            <li><a href="#">GALLERY</a></li>
-            <li><a href="#">CONTACT</a></li>
-          </ul>
           <div class="container hamburger">
             <input type="checkbox" id="label-check" class="label-check" />
             <label class="hamburger-label" for="label-check">
@@ -34,10 +30,39 @@
               <label></label
             ></label>
           </div>
+          <ul class="list-nav">
+            <li><a href="/home">HOME</a></li>
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="/blog">BLOG</a></li>
+            <li><a href="#">GALLERY</a></li>
+            <li><a href="#">CONTACT</a></li>
+          </ul>
+          <div style="display: flex; align-items: center">
+            <input type="text" placeholder="Search" style="width: 500px; height: 30px; padding: 2px; border: none" />
+            <img src="assets/images/search.png" alt="search" width="30" style="background-color: rgb(0, 255, 179); padding: 4px" />
+          </div>
         </div>
         <!--  From Uiverse.io by PhyoTP  -->
       </nav>
-      <div class="container-main-aside">
+      <div class="container-blog">
+        <div class="blog-container">
+          <% for(let posted of post){ %>
+          <div class="blog-card">
+            <a style="text-decoration: none; color: black" href="/blog/<%= posted.id %>">
+              <div class="card_1">
+                <img src="<%= posted.image %>" alt="article" width="100%" />
+              </div>
+              <h3 style="margin-top: 5px"><%= posted.subtitle %></h3>
+              <h5 style="margin-top: 5px">Author : <%= posted.author %>/ <%= posted.date %></h5>
+              <h5>Category : <%= posted.category %></h5>
+              <h5 style="margin-top: 10px"><%= posted.body %></h5>
+            </a>
+          </div>
+          <% } %>
+        </div>
+      </div>
+
+      <!-- <div class="container-main-aside">
         <main id="main">
           <div class="blog">
             <div class="images">
@@ -79,7 +104,7 @@
             <h3><a href=""><%= post[0].title %></a></h3>
           </div>
         </aside>
-      </div>
+      </div> -->
 
       <footer id="footer" style="background-color: rgba(133, 252, 122, 0.774)">
         <h2 style="text-align: center">Devtech Hidayah</h2>
