@@ -28,31 +28,6 @@ span {
   font-weight: bold;
 }
 
-#container-main {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 50px;
-}
-
-.main-intro-container {
-  width: 500px;
-  padding: 5px;
-}
-
-.main-image {
-  width: 600px;
-  padding: 5px;
-}
-
-.image {
-  width: 100%;
-}
-
-.main-intro {
-  font-size: 50px;
-}
 .article {
   text-align: justify;
 }

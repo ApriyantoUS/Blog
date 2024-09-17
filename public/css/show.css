@@ -6,14 +6,16 @@ body {
 }
 
 .container-article {
+  margin-top: 50px;
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 10px;
+  gap: 50px;
 }
 
 .article-card {
   width: 400px;
+  border: 1px solid black;
 }
 
 .image-show {
@@ -21,9 +23,14 @@ body {
 }
 
 .container-aside {
-  width: 400px;
+  width: 200px;
+  border: 1px solid black;
 }
 
-.image-aside {
+.other-articles {
+  width: 100%;
+}
+
+.other-articles img {
   width: 100%;
 }
